@@ -1,5 +1,5 @@
-AWS Fargate
-===========
+AWS ECS
+=======
 
 # Create network, repository and cluster
 
