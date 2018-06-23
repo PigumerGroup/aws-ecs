@@ -57,7 +57,7 @@ Resources:
   Log:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName: '/aws/ecs/http'
+      LogGroupName: 'ecs'
   Task:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -81,6 +81,7 @@ Resources:
           Options:
             awslogs-group: !Ref Log
             awslogs-region: !Ref AWS::Region
+            awslogs-stream-prefix: 'ecs'
         MemoryReservation: 512
         PortMappings:
         - ContainerPort: 8080
