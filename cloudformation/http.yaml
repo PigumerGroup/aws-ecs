@@ -81,7 +81,7 @@ Resources:
           Options:
             awslogs-group: !Ref Log
             awslogs-region: !Ref AWS::Region
-            awslogs-stream-prefix: 'ecs'
+            awslogs-stream-prefix: 'ec2'
         MemoryReservation: 512
         PortMappings:
         - ContainerPort: 8080
