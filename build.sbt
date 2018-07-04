@@ -20,7 +20,7 @@ lazy val root = (project in file("."))
       akkaStream
     )
   ).settings(
-    dockerBaseImage := "java:8-jdk-alpine",
+    dockerBaseImage := "openjdk:8-jre-alpine",
     dockerExposedPorts := Seq(8080, 9010),
     mainClass in assembly := Some("com.pigumer.http.HelloWorld")
   ).settings(
