@@ -1,5 +1,4 @@
 ![CodeBuild](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoib05lbU1DaTRKcktYbFN3WjFCRVV0cVVMRTVqUjVsaHpTWVdsRDE3N2NMaDNuZ0dMTmJ1T0V5VlZPbG5QcWprR0Rqd0JqQy9zc095UEFqY0FCd3NjZkswPSIsIml2UGFyYW1ldGVyU3BlYyI6IjZ4TEVweVRSalpLbFUzSnEiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
-[![Build Status](https://travis-ci.org/PigumerGroup/aws-ecs.svg?branch=master)](https://travis-ci.org/PigumerGroup/aws-ecs)
 
 AWS ECS
 =======
