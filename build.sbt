@@ -31,24 +31,36 @@ lazy val root = (project in file("."))
     )
   ).settings(
     awscfStacks := Stacks(
+      Alias("iam") → CloudformationStack(
+        stackName = "aws-ecs-iam",
+        template = "iam.yaml",
+        capabilities = Seq("CAPABILITY_NAMED_IAM")
+      ),
+      Alias("codebuild") → CloudformationStack(
+        stackName = "aws-ecs-codebuild",
+        template = "codebuild.yaml",
+        parameters = Map(
+          "Location" → BucketName.get
+        )
+      ),
       Alias("vpc") → CloudformationStack(
-        stackName = "vpc",
+        stackName = "aws-ecs-vpc",
         template = "vpc.yaml"
       ),
       Alias("alb") → CloudformationStack(
-        stackName = "alb",
+        stackName = "aws-ecs-alb",
         template = "alb.yaml"
       ),
       Alias("ecr") → CloudformationStack(
-        stackName = "ecr",
+        stackName = "aws-ecs-ecr",
         template = "ecr.yaml"
       ),
       Alias("ecscluster") → CloudformationStack(
-        stackName = "ecscluster",
+        stackName = "aws-ecs-ecscluster",
         template = "ecscluster.yaml"
       ),
       Alias("ec2") → CloudformationStack(
-        stackName = "ec2",
+        stackName = "aws-ecs-ec2",
         template = "ec2.yaml",
         parameters = Map(
           "ImageId" → "ami-f3f8098c"
@@ -56,7 +68,7 @@ lazy val root = (project in file("."))
         capabilities = Seq("CAPABILITY_IAM")
       ),
       Alias("http") → CloudformationStack(
-        stackName = "http",
+        stackName = "aws-ecs-http",
         template = "http.yaml",
         parameters = Map(
           "Image" → s"${(awsecrDomain in awsecr).value}/http:${version.value}"
