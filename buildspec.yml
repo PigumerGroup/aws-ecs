@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  build:
+    commands:
+    - sbt ";compile ;docker:stage ;docker:publishLocal"
+artifacts:
+  files:
+  - '**/*'
+  discard-paths: no
+cache:
+  paths:
+  - '/root/.ivy2/cache/**/*'
